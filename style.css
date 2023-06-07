@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --text-color: #ffffff;
+  --bg-url: url(../assets/bg-mobile.jpg);
+  --bg-button-color: rgba(255, 255, 255, 0.1);
+  --border-button-collor: rgba(255, 255, 255, 0.5);
+  --bg-hoover: rgba(255, 255, 255, 0.05);
+  --hoover-social: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(../assets/moon.svg);
+}
+.light {
+  --text-color: #000000;
+  --bg-url: url(../assets/bg-mobile-light.jpg);
+  --bg-button-color: rgba(0, 0, 0, 0.05);
+  --border-button-collor: rgba(0, 0, 0, 0.5);
+  --bg-hoover: rgba(0, 0, 0, 0.02);
+  --hoover-social: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(../assets/sun.svg);
+}
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+#container {
+  width: 360px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--bg-button-color);
+  border: 1px solid var(--border-button-collor);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.light #switch button {
+  right: initial;
+  left: 0;
+}
+
+/* links */
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--bg-button-color);
+  border: 1px solid var(--border-button-collor);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+/* Social links */
+#social-links {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  padding: 32px 0;
+}
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.1s;
+}
+
+/* footer */
+
+footer {
+  padding: 24px;
+  text-align: center;
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  border: 1.5px solid var(--text-color);
+  background: var(--bg-hoover);
+}
+#social-links a:hover {
+  background: var(--hoover-social);
+}
